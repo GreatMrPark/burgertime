@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.greateam.burgertime.common.log.Dlog;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Dlog.d("Burger TIME Start");
+
+        FirebaseMessaging.getInstance().subscribeToTopic("ALL");
 
         editUrl = findViewById(R.id.editUrl);
 
@@ -41,6 +44,24 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),WebViewActivity.class);
                 intent.putExtra("url",url);
 
+                startActivity(intent);
+            }
+        });
+
+        Button buttonLottie = findViewById(R.id.buttonLottie); /*페이지 전환버튼*/
+        buttonLottie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LottieActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button buttonDataBase = findViewById(R.id.buttonDataBase); /*페이지 전환버튼*/
+        buttonDataBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),DataBaseActivity.class);
                 startActivity(intent);
             }
         });

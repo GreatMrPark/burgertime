@@ -1,17 +1,21 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(function(){
-    window.HybridApp.requestData();
+    window.BurgerTimeApp.requestData();
 });
 
 function saveData(){
     var item = $("#item").val();
     var num = $("#num").val();
-    window.HybridApp.saveData(item, num);
+
+    alert("item : " + item);
+    alert("num : " + num);
+
+    window.BurgerTimeApp.saveData(item, num);
 }
 
 function getAndroidData(data){
@@ -23,14 +27,28 @@ function getAndroidData(data){
         $("#testDiv").append("<p>"+dataArr[count]+" </p>");
     }
 }
+function setMessage(arg) {
+    alert(arg);
+    var param = {};
+    param.token = arg;
+    gPost("/저장하러 날릴 URL"
+            ,param
+            , function(response){
+                if(!response.result){
+                    alert("디바이스 정보 저장 오류 어플리케이션을 다시 시작해 주십시오");
+                }
+            });
+
+}
 </script>
 </head>
 <body>
 <div>
     <p>Simple HTML</p>
     <form>
-        <input id="keyword"type="text" placeholder="keyword">
-        <button type="submit">Submit</button>
+        <input id="item"type="text" value="" placeholder="item">
+        <input id="num"type="text" value="" placeholder="num">
+        <button type="button" onClick="saveData();">저장</button>
     </form>
 </div>
 </body>

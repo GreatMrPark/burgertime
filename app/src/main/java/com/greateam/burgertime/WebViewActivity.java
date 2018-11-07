@@ -21,7 +21,7 @@ import static com.greateam.burgertime.common.utils.CommonUtils.getWhatKindOfNetw
 public class WebViewActivity extends AppCompatActivity {
 
     private WebView mWebView = null;
-    private String myUrl = "file:///android_asset";
+    private String myUrl = "file:///android_asset/www/";
     private boolean newtwork = true;
 
     @Override
@@ -36,16 +36,18 @@ public class WebViewActivity extends AppCompatActivity {
         if(getNetwork.equals("NONE")){
             newtwork = false;
         }
+        Dlog.d("newtwork : " + newtwork);
 
         //이전 액티비티에서 수신할 데이터를 받기위해 선언
         Intent intent = getIntent();
 
         //호출한 액티비티에서 String 이라는 키 값을 가진 데이터 로드
         String url = intent.getStringExtra("url");
-        Dlog.d("url : " + myUrl);
+        Dlog.d("myUrl : " + myUrl);
+        Dlog.d("url : " + url);
 
         if (!"".equals(url)) {
-            myUrl =  url;
+            myUrl +=  url;
         }
         Dlog.d("myUrl : " + myUrl);
 
@@ -53,7 +55,7 @@ public class WebViewActivity extends AppCompatActivity {
         final Context BurgerTimeApp = this;
         mWebView = findViewById(R.id.webView);
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl(myUrl + "/www/index.html"); // 접속 URL
+        mWebView.loadUrl(myUrl); // 접속 URL
         mWebView.setWebChromeClient(new WebChromeClient(){
             @Override
             public boolean onJsAlert(WebView view, String url, String message, final android.webkit.JsResult result) {
@@ -96,6 +98,8 @@ public class WebViewActivity extends AppCompatActivity {
     private class WebViewClientClass extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+            Dlog.d("url : " + url);
             view.loadUrl(url);
             return true;
         }

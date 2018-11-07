@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.greateam.burgertime">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
@@ -12,15 +16,16 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".game.example.UimakingByXmlActivity" />
-        <activity android:name=".game.example.UiMakingByCodeActivity" />
-        <activity android:name=".game.example.UimakingByCodeXmlActivity" />
-        <activity android:name=".game.example.ConstrainLayoutActivity" />
-        <activity android:name=".game.example.ViewEventActivity"></activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".LottieActivity" />
+        <activity android:name=".DataBaseActivity"></activity>
     </application>
 
 </manifest>

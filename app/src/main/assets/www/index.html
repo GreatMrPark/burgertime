@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+$(function(){
+    window.HybridApp.requestData();
+});
+
+function saveData(){
+    var item = $("#item").val();
+    var num = $("#num").val();
+    window.HybridApp.saveData(item, num);
+}
+
+function getAndroidData(data){
+    alert(data);
+
+    var dataArr = data.split("*nn*");
+    $("#testDiv").empty();
+    for(var count=0; count < dataArr.length; count++){
+        $("#testDiv").append("<p>"+dataArr[count]+" </p>");
+    }
+}
+</script>
+</head>
+<body>
+<div>
+    <p>Simple HTML</p>
+    <form>
+        <input id="keyword"type="text" placeholder="keyword">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

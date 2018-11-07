@@ -8,33 +8,44 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Project H burgertime"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="짱정일"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="쏜성배"
-        />
+        android:text="Burger TIME"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/girl"
-        android:text="씬경희"
-        />
+        android:text="씬경희" />
 
-    <EditText
+    <Button
+        android:id="@+id/buttonNavigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Input Text"
-        />
+        android:text="Navigation" />
+
+    <EditText
+        android:id="@+id/editUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="file:///android_asset/www/index.html"/>
+
+    <Button
+        android:id="@+id/buttonWebView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WebView" />
+
+
+    <Button
+        android:id="@+id/buttonLottie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOTTIE" />
 
 </LinearLayout>

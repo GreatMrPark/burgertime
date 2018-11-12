@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "121301152542",
+    "firebase_url": "https://project-h-3205c.firebaseio.com",
+    "project_id": "project-h-3205c",
+    "storage_bucket": "project-h-3205c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121301152542:android:435685cb8a7e1288",
+        "android_client_info": {
+          "package_name": "com.greateam.burgertime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121301152542-jhmca027qqnio6bp9q5p5c25ip9aobkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaZzmJ07qHl-GcoYpag5EHCCfJBC3sL3g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

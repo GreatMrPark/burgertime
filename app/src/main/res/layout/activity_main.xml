@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/mainLayout">
 
     <TextView
         android:id="@+id/textTitle"
@@ -52,5 +53,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DATABASE" />
+
+    <Button
+        android:id="@+id/buttonPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POPUP" />
+
+    <Button
+        android:id="@+id/fullscreenPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FULLSCREEN" />
 
 </LinearLayout>

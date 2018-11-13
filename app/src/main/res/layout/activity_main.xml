@@ -61,9 +61,15 @@
         android:text="POPUP" />
 
     <Button
-        android:id="@+id/fullscreenPopup"
+        android:id="@+id/buttonFullscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FULLSCREEN" />
+
+    <Button
+        android:id="@+id/buttonCoverFlow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COVERFLOW" />
 
 </LinearLayout>

@@ -104,11 +104,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button fullscreenPopup = findViewById(R.id.fullscreenPopup); /*페이지 전환버튼*/
-        fullscreenPopup.setOnClickListener(new View.OnClickListener() {
+        Button buttonFullscreen = findViewById(R.id.buttonFullscreen); /*페이지 전환버튼*/
+        buttonFullscreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),FullscreenActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button buttonCoverFlow = findViewById(R.id.buttonCoverFlow); /*페이지 전환버튼*/
+        buttonCoverFlow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),CoverFlowActivity.class);
                 startActivity(intent);
             }
         });
